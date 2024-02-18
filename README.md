@@ -26,7 +26,7 @@ Check the UI of all the app screens from a single place by setting up the 'initi
 
 ### Application structure
 
-After successful build, your application structure should look like this:
+ The application structure should look like this:
 
 ```
 .
@@ -45,7 +45,7 @@ After successful build, your application structure should look like this:
     └── widgets                     - It contains all custom widget classes
 ```
 
-### How to format your code?
+### How to format code?
 
 - if your code is not formatted then run following command in your terminal to format code
   ```
