@@ -13,12 +13,17 @@ final Map<String, String> enUs = {
   "lbl_gha": "GHA",
   "msg_already_have_an": "Already have an account?",
   "msg_enter_phone_number": "Enter phone number",
-  "msg_enter_your_business": "Enter your business or username",
+  "msg_i_agree_wih_terms": "I agree wih Terms and Privacy Policy",
   "msg_must_be_at_least": "Must be at least 8 characters.",
+  "msg_placeholder_text": "Placeholder Text",
 
   // Sign-In Screen
-  "lbl_forgot_password": "Forgot Password", "lbl_remember_me": "Remember me",
+  "lbl_email": "Email",
+  "lbl_enter_password": "Enter Password",
+  "lbl_forgot_password": "Forgot Password",
+  "lbl_remember_me": "Remember me",
   "msg_don_t_have_an_account": "Don’t have an account?",
+  "msg_save_my_login_details": "Save my login details for next time.",
 
   // Verificy Account Screen
   "lbl_resend_code": "Resend Code",
@@ -33,16 +38,12 @@ final Map<String, String> enUs = {
   "msg_request_new_code": "Request New Code",
 
   // Reset Password Screen
-  "lbl_reset_password": "Reset Password",
-  "msg_request_new_password": "Request New Password",
-  "msg_request_your_password":
-      "Request your password by entering your email below",
+  "lbl_return_to": "Return to",
+  "msg_forgot_password": "Forgot Password?",
+  "msg_request_password": "Request password reset by entering your email below",
+  "msg_send_request_link": "Send Request Link to Email",
 
   // Homepage Screen
-  "lbl_ghs_10_500": "GHs 10,500",
-  "msg_lenovo_flex_12th": "Lenovo Flex 12th Generation X360",
-
-  // Homepage - Tab Container Screen
   "lbl_0_ad": "0 Ad",
   "lbl_10_ads": "10 Ads",
   "lbl_11_ads": "11 Ads",
@@ -58,13 +59,14 @@ final Map<String, String> enUs = {
   "lbl_64_ads": "64 Ads",
   "lbl_animal_pets": "Animal & Pets",
   "lbl_babies_kids": "Babies & Kids",
+  "lbl_electronics": "Electronics",
   "lbl_fashion": "Fashion",
   "lbl_general": "General",
   "lbl_health_beauty": "Health & Beauty",
   "lbl_jobs": "Jobs",
   "lbl_latest": "Latest",
-  "lbl_property": "Property",
-  "lbl_service": "Service",
+  "lbl_properies": "Properies",
+  "lbl_services": "Services",
   "lbl_shop_now": "Shop Now",
   "lbl_top_listings": "Top Listings",
   "lbl_trending": "Trending",
@@ -83,8 +85,6 @@ final Map<String, String> enUs = {
   "msg_sports_outdoors": "Sports & Outdoors",
 
   // Common String
-  "lbl_electronics": "Electronics",
-  "lbl_enter_password": "Enter Password",
   "lbl_sign_in": "Sign In",
   "lbl_sign_up": "Sign Up",
   "lbl_verify_account": "Verify Account",
@@ -97,7 +97,5 @@ final Map<String, String> enUs = {
 
   // Validation Error String
   "err_msg_please_enter_valid_phone_number": "Please enter valid phone number",
-  "err_msg_please_enter_valid_text": "Please enter valid text",
   "err_msg_please_enter_valid_email": "Please enter valid email",
-  "err_msg_please_enter_valid_password": "Please enter valid password",
 };

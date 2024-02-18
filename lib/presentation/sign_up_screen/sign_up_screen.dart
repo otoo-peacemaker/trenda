@@ -7,6 +7,7 @@ import 'package:trenda/core/utils/validation_functions.dart';
 import 'package:trenda/widgets/app_bar/appbar_leading_image.dart';
 import 'package:trenda/widgets/app_bar/appbar_title.dart';
 import 'package:trenda/widgets/app_bar/custom_app_bar.dart';
+import 'package:trenda/widgets/custom_checkbox_button.dart';
 import 'package:trenda/widgets/custom_outlined_button.dart';
 import 'package:trenda/widgets/custom_phone_number.dart';
 import 'package:trenda/widgets/custom_text_form_field.dart';
@@ -40,8 +41,7 @@ class SignUpScreenState extends State<SignUpScreen> {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: _buildAppBar(context),
-            body: SizedBox(
-                width: SizeUtils.width,
+            body: Center(
                 child: SingleChildScrollView(
                     padding: EdgeInsets.only(
                         bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -51,53 +51,59 @@ class SignUpScreenState extends State<SignUpScreen> {
                             width: double.maxFinite,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 16.h, vertical: 56.v),
-                            child: Column(children: [
-                              CustomImageView(
-                                  imagePath: ImageConstant.imgTrendaLogoUp1,
-                                  height: 52.v,
-                                  width: 80.h),
-                              SizedBox(height: 32.v),
-                              _buildUserName(context),
-                              SizedBox(height: 16.v),
-                              _buildEmail(context),
-                              SizedBox(height: 16.v),
-                              _buildPhoneNumber(context),
-                              SizedBox(height: 16.v),
-                              _buildPassword(context),
-                              SizedBox(height: 6.v),
-                              Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text("msg_must_be_at_least".tr,
-                                      style:
-                                          CustomTextStyles.bodySmallTeal800)),
-                              SizedBox(height: 34.v),
-                              _buildSignUp(context),
-                              SizedBox(height: 16.v),
-                              _buildSignInWithFacebook(context),
-                              SizedBox(height: 42.v),
-                              Padding(
-                                  padding:
-                                      EdgeInsets.only(left: 44.h, right: 52.h),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 1.v),
-                                            child: Text(
-                                                "msg_already_have_an".tr,
-                                                style: CustomTextStyles
-                                                    .bodyMediumBluegray700)),
-                                        Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 12.h),
-                                            child: Text("lbl_sign_in".tr,
-                                                style: CustomTextStyles
-                                                    .bodyLargeGilroyMediumTeal800))
-                                      ])),
-                              SizedBox(height: 5.v)
-                            ])))))));
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CustomImageView(
+                                      imagePath: ImageConstant.imgTrendaLogoUp1,
+                                      height: 52.v,
+                                      width: 80.h),
+                                  SizedBox(height: 32.v),
+                                  _buildPlaceholderTextThree(context),
+                                  SizedBox(height: 16.v),
+                                  _buildEmail(context),
+                                  SizedBox(height: 16.v),
+                                  _buildPhoneNumber(context),
+                                  SizedBox(height: 16.v),
+                                  _buildAirplane(context),
+                                  SizedBox(height: 12.v),
+                                  Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text("msg_must_be_at_least".tr,
+                                          style: CustomTextStyles
+                                              .bodySmallBluegray700)),
+                                  SizedBox(height: 18.v),
+                                  _buildAirplane1(context),
+                                  SizedBox(height: 12.v),
+                                  _buildCheckBox(context),
+                                  SizedBox(height: 31.v),
+                                  _buildSignUp(context),
+                                  SizedBox(height: 16.v),
+                                  _buildSignInWithFacebook(context),
+                                  SizedBox(height: 42.v),
+                                  Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 44.h, right: 52.h),
+                                      child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: 1.v),
+                                                child: Text(
+                                                    "msg_already_have_an".tr,
+                                                    style: CustomTextStyles
+                                                        .bodyMediumBluegray700)),
+                                            Padding(
+                                                padding:
+                                                    EdgeInsets.only(left: 12.h),
+                                                child: Text("lbl_sign_in".tr,
+                                                    style: CustomTextStyles
+                                                        .bodyLargeGilroyMediumTeal800))
+                                          ])),
+                                  SizedBox(height: 2.v)
+                                ])))))));
   }
 
   /// Section Widget
@@ -106,26 +112,24 @@ class SignUpScreenState extends State<SignUpScreen> {
         leadingWidth: 33.h,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgLeftarrowIcon,
-            margin: EdgeInsets.only(left: 13.h, top: 28.v, bottom: 12.v)),
+            margin: EdgeInsets.only(left: 13.h, top: 28.v, bottom: 12.v),
+            onTap: () {
+              onTapLeftArrowIcon(context);
+            }),
         centerTitle: true,
         title: AppbarTitle(text: "lbl_sign_up".tr),
-        styleType: Style.bgFill_1);
+        styleType: Style.bgFill);
   }
 
   /// Section Widget
-  Widget _buildUserName(BuildContext context) {
+  Widget _buildPlaceholderTextThree(BuildContext context) {
     return Selector<SignUpProvider, TextEditingController?>(
-        selector: (context, provider) => provider.userNameController,
-        builder: (context, userNameController, child) {
+        selector: (context, provider) =>
+            provider.placeholderTextThreeController,
+        builder: (context, placeholderTextThreeController, child) {
           return CustomTextFormField(
-              controller: userNameController,
-              hintText: "msg_enter_your_business".tr,
-              validator: (value) {
-                if (!isText(value)) {
-                  return "err_msg_please_enter_valid_text".tr;
-                }
-                return null;
-              });
+              controller: placeholderTextThreeController,
+              hintText: "msg_placeholder_text".tr);
         });
   }
 
@@ -161,24 +165,61 @@ class SignUpScreenState extends State<SignUpScreen> {
   }
 
   /// Section Widget
-  Widget _buildPassword(BuildContext context) {
+  Widget _buildAirplane(BuildContext context) {
     return Selector<SignUpProvider, TextEditingController?>(
-        selector: (context, provider) => provider.passwordController,
-        builder: (context, passwordController, child) {
+        selector: (context, provider) => provider.airplaneController,
+        builder: (context, airplaneController, child) {
           return CustomTextFormField(
-              controller: passwordController,
-              hintText: "lbl_enter_password".tr,
-              textInputAction: TextInputAction.done,
-              textInputType: TextInputType.visiblePassword,
-              validator: (value) {
-                if (value == null ||
-                    (!isValidPassword(value, isRequired: true))) {
-                  return "err_msg_please_enter_valid_password".tr;
-                }
-                return null;
-              },
-              obscureText: true);
+              controller: airplaneController,
+              hintText: "msg_placeholder_text".tr,
+              suffix: Container(
+                  margin: EdgeInsets.fromLTRB(30.h, 10.v, 12.h, 10.v),
+                  child: CustomImageView(
+                      imagePath: ImageConstant.imgAirplane,
+                      height: 24.adaptSize,
+                      width: 24.adaptSize)),
+              suffixConstraints: BoxConstraints(maxHeight: 44.v),
+              contentPadding:
+                  EdgeInsets.only(left: 12.h, top: 13.v, bottom: 13.v));
         });
+  }
+
+  /// Section Widget
+  Widget _buildAirplane1(BuildContext context) {
+    return Selector<SignUpProvider, TextEditingController?>(
+        selector: (context, provider) => provider.airplaneController1,
+        builder: (context, airplaneController1, child) {
+          return CustomTextFormField(
+              controller: airplaneController1,
+              hintText: "msg_placeholder_text".tr,
+              textInputAction: TextInputAction.done,
+              suffix: Container(
+                  margin: EdgeInsets.fromLTRB(30.h, 10.v, 12.h, 10.v),
+                  child: CustomImageView(
+                      imagePath: ImageConstant.imgAirplane,
+                      height: 24.adaptSize,
+                      width: 24.adaptSize)),
+              suffixConstraints: BoxConstraints(maxHeight: 44.v),
+              contentPadding:
+                  EdgeInsets.only(left: 12.h, top: 13.v, bottom: 13.v));
+        });
+  }
+
+  /// Section Widget
+  Widget _buildCheckBox(BuildContext context) {
+    return Align(
+        alignment: Alignment.centerLeft,
+        child: Selector<SignUpProvider, bool?>(
+            selector: (context, provider) => provider.checkBox,
+            builder: (context, checkBox, child) {
+              return CustomCheckboxButton(
+                  alignment: Alignment.centerLeft,
+                  text: "msg_i_agree_wih_terms".tr,
+                  value: checkBox,
+                  onChange: (value) {
+                    context.read<SignUpProvider>().changeCheckBox1(value);
+                  });
+            }));
   }
 
   /// Section Widget
@@ -200,6 +241,13 @@ class SignUpScreenState extends State<SignUpScreen> {
         onPressed: () {
           onTapSignInWithFacebook(context);
         });
+  }
+
+  /// Navigates to the onboardingTwoScreen when the action is triggered.
+  onTapLeftArrowIcon(BuildContext context) {
+    NavigatorService.pushNamed(
+      AppRoutes.onboardingTwoScreen,
+    );
   }
 
   onTapSignInWithFacebook(BuildContext context) async {

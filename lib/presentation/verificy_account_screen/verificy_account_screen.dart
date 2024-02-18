@@ -82,8 +82,7 @@ class VerificyAccountScreenState extends State<VerificyAccountScreen> {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
-                  style: CustomTextStyles.bodyMediumGilroyRegularErrorContainer
-                      .copyWith(
+                  style: CustomTextStyles.bodyMediumBluegray500.copyWith(
                     height: 1.43,
                   ),
                 ),

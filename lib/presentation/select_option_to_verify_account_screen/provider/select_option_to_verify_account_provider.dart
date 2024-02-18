@@ -6,6 +6,8 @@ import 'package:trenda/presentation/select_option_to_verify_account_screen/model
 ///
 /// This provider manages the state of the SelectOptionToVerifyAccountScreen, including the
 /// current selectOptionToVerifyAccountModelObj
+
+// ignore_for_file: must_be_immutable
 class SelectOptionToVerifyAccountProvider extends ChangeNotifier {
   SelectOptionToVerifyAccountModel selectOptionToVerifyAccountModelObj =
       SelectOptionToVerifyAccountModel();

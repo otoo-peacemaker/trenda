@@ -53,13 +53,13 @@ class ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 292.h,
+                      width: 296.h,
                       margin: EdgeInsets.only(
-                        left: 18.h,
-                        right: 17.h,
+                        left: 16.h,
+                        right: 15.h,
                       ),
                       child: Text(
-                        "msg_request_your_password".tr,
+                        "msg_request_password".tr,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
@@ -91,9 +91,30 @@ class ResetPasswordScreenState extends State<ResetPasswordScreen> {
                         );
                       },
                     ),
-                    SizedBox(height: 20.v),
+                    SizedBox(height: 24.v),
                     CustomOutlinedButton(
-                      text: "msg_request_new_password".tr,
+                      text: "msg_send_request_link".tr,
+                    ),
+                    SizedBox(height: 42.v),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 2.v),
+                          child: Text(
+                            "lbl_return_to".tr,
+                            style: CustomTextStyles.bodyMediumBluegray500,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 12.h),
+                          child: Text(
+                            "lbl_sign_up".tr,
+                            style:
+                                CustomTextStyles.bodyLargeGilroyMediumGreenA700,
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(height: 5.v),
                   ],
@@ -118,9 +139,9 @@ class ResetPasswordScreenState extends State<ResetPasswordScreen> {
           bottom: 12.v,
         ),
       ),
+      centerTitle: true,
       title: AppbarTitle(
-        text: "lbl_reset_password".tr,
-        margin: EdgeInsets.only(left: 68.h),
+        text: "msg_forgot_password".tr,
       ),
       styleType: Style.bgFill,
     );

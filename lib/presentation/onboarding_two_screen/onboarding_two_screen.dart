@@ -48,7 +48,7 @@ class OnboardingTwoScreenState extends State<OnboardingTwoScreen> {
                       SizedBox(height: 16.v),
                       CustomOutlinedButton(
                           text: "lbl_buy".tr,
-                          buttonStyle: CustomButtonStyles.outlineGreenATL8)
+                          buttonStyle: CustomButtonStyles.outlineGreenATL82)
                     ]))));
   }
 }

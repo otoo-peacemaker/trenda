@@ -87,9 +87,9 @@ class AppNavigationScreenState extends State<AppNavigationScreen> {
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "Homepage - Tab Container".tr,
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              AppRoutes.homepageTabContainerScreen),
+                          screenTitle: "Homepage".tr,
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(AppRoutes.homepageScreen),
                         ),
                       ],
                     ),

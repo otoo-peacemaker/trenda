@@ -1,8 +1,8 @@
 import '../../../core/app_export.dart';
 
-/// This class is used in the [categorygrid_item_widget] screen.
-class CategorygridItemModel {
-  CategorygridItemModel({
+/// This class is used in the [framefortytwo_item_widget] screen.
+class FramefortytwoItemModel {
+  FramefortytwoItemModel({
     this.generalImage,
     this.generalText,
     this.adText,

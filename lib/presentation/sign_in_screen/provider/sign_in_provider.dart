@@ -9,23 +9,17 @@ import 'package:trenda/presentation/sign_in_screen/models/sign_in_model.dart';
 
 // ignore_for_file: must_be_immutable
 class SignInProvider extends ChangeNotifier {
-  TextEditingController emailController = TextEditingController();
+  TextEditingController emailEditTextController = TextEditingController();
 
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController emailFloatingTextFieldController =
+      TextEditingController();
 
   SignInModel signInModelObj = SignInModel();
-
-  bool rememberMe = false;
 
   @override
   void dispose() {
     super.dispose();
-    emailController.dispose();
-    passwordController.dispose();
-  }
-
-  void changeCheckBox1(bool value) {
-    rememberMe = value;
-    notifyListeners();
+    emailEditTextController.dispose();
+    emailFloatingTextFieldController.dispose();
   }
 }

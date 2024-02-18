@@ -64,10 +64,12 @@ class ThemeHelper {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: appTheme.cyan50,
+          backgroundColor: appTheme.greenA200,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.h),
+            borderRadius: BorderRadius.circular(8.h),
           ),
+          shadowColor: colorScheme.primary,
+          elevation: 1,
           visualDensity: const VisualDensity(
             vertical: -4,
             horizontal: -4,
@@ -110,7 +112,7 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         bodyMedium: TextStyle(
-          color: appTheme.teal900,
+          color: colorScheme.onPrimary,
           fontSize: 14.fSize,
           fontFamily: 'Gilroy-Medium',
           fontWeight: FontWeight.w400,
