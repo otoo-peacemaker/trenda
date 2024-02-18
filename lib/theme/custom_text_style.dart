@@ -69,6 +69,10 @@ class CustomTextStyles {
       theme.textTheme.bodyMedium!.gilroyRegular.copyWith(
         color: appTheme.greenA700,
       );
+  static get bodyMediumGilroyRegularTeal900 =>
+      theme.textTheme.bodyMedium!.gilroyRegular.copyWith(
+        color: appTheme.teal900,
+      );
   static get bodyMediumOnPrimary => theme.textTheme.bodyMedium!.copyWith(
         color: theme.colorScheme.onPrimary,
       );
@@ -76,12 +80,18 @@ class CustomTextStyles {
       theme.textTheme.bodyMedium!.copyWith(
         color: theme.colorScheme.onPrimaryContainer,
       );
+  static get bodyMediumTeal900 => theme.textTheme.bodyMedium!.copyWith(
+        color: appTheme.teal900,
+      );
   static get bodySmallBluegray700 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.blueGray700,
-        fontSize: 10.fSize,
       );
   static get bodySmallBluegray800 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.blueGray800,
+      );
+  static get bodySmallGilroyRegularBluegray500 =>
+      theme.textTheme.bodySmall!.gilroyRegular.copyWith(
+        color: appTheme.blueGray500,
       );
   static get bodySmallGilroyRegularErrorContainer =>
       theme.textTheme.bodySmall!.gilroyRegular.copyWith(
@@ -90,6 +100,9 @@ class CustomTextStyles {
   static get bodySmallGilroySemiBoldBluegray50 =>
       theme.textTheme.bodySmall!.gilroySemiBold.copyWith(
         color: appTheme.blueGray50,
+      );
+  static get bodySmallGreenA700 => theme.textTheme.bodySmall!.copyWith(
+        color: appTheme.greenA700,
       );
   static get bodySmallTeal800 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.teal800,

@@ -66,11 +66,3 @@ Resolve the errors and warnings that are shown in the application.
 ### Support
 
 If you have any problems or questions, go to our Discord channel, where we will help you as quickly as possible: https://discord.com/invite/rFMnCG5MZ7
-
-### Image Assets
-We were unable to find Images, Please add manually to ```project/assets``` and replace image_not_found Image constant with original file 
-
-| File Name | Not Found Assets Count |
-| --- | :---: |
-| homepage_tab_container_screen | 1 |
-

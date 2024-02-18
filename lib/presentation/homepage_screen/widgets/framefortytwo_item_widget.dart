@@ -1,17 +1,17 @@
-import '../models/categorygrid_item_model.dart';
+import '../models/framefortytwo_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:trenda/core/app_export.dart';
 
 // ignore: must_be_immutable
-class CategorygridItemWidget extends StatelessWidget {
-  CategorygridItemWidget(
-    this.categorygridItemModelObj, {
+class FramefortytwoItemWidget extends StatelessWidget {
+  FramefortytwoItemWidget(
+    this.framefortytwoItemModelObj, {
     Key? key,
   }) : super(
           key: key,
         );
 
-  CategorygridItemModel categorygridItemModelObj;
+  FramefortytwoItemModel framefortytwoItemModelObj;
 
   @override
   Widget build(BuildContext context) {
@@ -27,21 +27,21 @@ class CategorygridItemWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           CustomImageView(
-            imagePath: categorygridItemModelObj?.generalImage,
-            height: 28.adaptSize,
-            width: 28.adaptSize,
+            imagePath: framefortytwoItemModelObj?.generalImage,
+            height: 32.adaptSize,
+            width: 32.adaptSize,
           ),
           SizedBox(height: 8.v),
           Text(
-            categorygridItemModelObj.generalText!,
+            framefortytwoItemModelObj.generalText!,
             style: CustomTextStyles.bodySmallGilroyRegularErrorContainer,
           ),
           SizedBox(height: 12.v),
           Text(
-            categorygridItemModelObj.adText!,
+            framefortytwoItemModelObj.adText!,
             style: theme.textTheme.bodySmall,
           ),
-          SizedBox(height: 19.v),
+          SizedBox(height: 15.v),
         ],
       ),
     );

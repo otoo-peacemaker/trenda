@@ -6,7 +6,7 @@ import 'package:trenda/presentation/sign_in_screen/sign_in_screen.dart';
 import 'package:trenda/presentation/verificy_account_screen/verificy_account_screen.dart';
 import 'package:trenda/presentation/request_new_code_screen/request_new_code_screen.dart';
 import 'package:trenda/presentation/reset_password_screen/reset_password_screen.dart';
-import 'package:trenda/presentation/homepage_tab_container_screen/homepage_tab_container_screen.dart';
+import 'package:trenda/presentation/homepage_screen/homepage_screen.dart';
 import 'package:trenda/presentation/app_navigation_screen/app_navigation_screen.dart';
 
 class AppRoutes {
@@ -25,10 +25,7 @@ class AppRoutes {
 
   static const String resetPasswordScreen = '/reset_password_screen';
 
-  static const String homepagePage = '/homepage_page';
-
-  static const String homepageTabContainerScreen =
-      '/homepage_tab_container_screen';
+  static const String homepageScreen = '/homepage_screen';
 
   static const String appNavigationScreen = '/app_navigation_screen';
 
@@ -43,7 +40,7 @@ class AppRoutes {
         verificyAccountScreen: VerificyAccountScreen.builder,
         requestNewCodeScreen: RequestNewCodeScreen.builder,
         resetPasswordScreen: ResetPasswordScreen.builder,
-        homepageTabContainerScreen: HomepageTabContainerScreen.builder,
+        homepageScreen: HomepageScreen.builder,
         appNavigationScreen: AppNavigationScreen.builder,
         initialRoute: OnboardingTwoScreen.builder
       };

@@ -63,7 +63,7 @@ class CustomOutlinedButton extends BaseButton {
               leftIcon ?? const SizedBox.shrink(),
               Text(
                 text,
-                style: buttonTextStyle ?? theme.textTheme.bodyMedium,
+                style: buttonTextStyle ?? CustomTextStyles.bodyMediumTeal900,
               ),
               rightIcon ?? const SizedBox.shrink(),
             ],

@@ -91,7 +91,7 @@ class RequestNewCodeScreenState extends State<RequestNewCodeScreen> {
                         );
                       },
                     ),
-                    SizedBox(height: 20.v),
+                    SizedBox(height: 24.v),
                     CustomOutlinedButton(
                       text: "msg_request_new_code".tr,
                       buttonStyle: CustomButtonStyles.outlineTealA,

@@ -11,29 +11,40 @@ import 'package:country_pickers/utils/utils.dart';
 
 // ignore_for_file: must_be_immutable
 class SignUpProvider extends ChangeNotifier {
-  TextEditingController userNameController = TextEditingController();
+  TextEditingController placeholderTextThreeController =
+      TextEditingController();
 
   TextEditingController emailController = TextEditingController();
 
   TextEditingController phoneNumberController = TextEditingController();
 
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController airplaneController = TextEditingController();
+
+  TextEditingController airplaneController1 = TextEditingController();
 
   SignUpModel signUpModelObj = SignUpModel();
 
   Country? selectedCountry;
 
+  bool checkBox = false;
+
   @override
   void dispose() {
     super.dispose();
-    userNameController.dispose();
+    placeholderTextThreeController.dispose();
     emailController.dispose();
     phoneNumberController.dispose();
-    passwordController.dispose();
+    airplaneController.dispose();
+    airplaneController1.dispose();
   }
 
   void changeCountry(Country value) {
     selectedCountry = value;
+    notifyListeners();
+  }
+
+  void changeCheckBox1(bool value) {
+    checkBox = value;
     notifyListeners();
   }
 }

@@ -9,7 +9,7 @@ class AppDecoration {
 
   // Outline decorations
   static BoxDecoration get outlineBlueGray => BoxDecoration(
-        color: appTheme.blueGray700,
+        color: appTheme.blueGray800,
         boxShadow: [
           BoxShadow(
             color: appTheme.blueGray70014,
@@ -27,11 +27,6 @@ class AppDecoration {
           color: theme.colorScheme.onErrorContainer,
           width: 1.h,
         ),
-      );
-
-  // White decorations
-  static BoxDecoration get white => BoxDecoration(
-        color: appTheme.whiteA70001,
       );
 }
 

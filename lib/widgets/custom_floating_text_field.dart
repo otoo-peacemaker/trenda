@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../core/app_export.dart';
 
-class CustomSearchView extends StatelessWidget {
-  CustomSearchView({
+class CustomFloatingTextField extends StatelessWidget {
+  CustomFloatingTextField({
     Key? key,
     this.alignment,
     this.width,
@@ -11,10 +11,14 @@ class CustomSearchView extends StatelessWidget {
     this.focusNode,
     this.autofocus = true,
     this.textStyle,
+    this.obscureText = false,
+    this.textInputAction = TextInputAction.next,
     this.textInputType = TextInputType.text,
     this.maxLines,
     this.hintText,
     this.hintStyle,
+    this.labelText,
+    this.labelStyle,
     this.prefix,
     this.prefixConstraints,
     this.suffix,
@@ -24,7 +28,6 @@ class CustomSearchView extends StatelessWidget {
     this.fillColor,
     this.filled = true,
     this.validator,
-    this.onChanged,
   }) : super(
           key: key,
         );
@@ -43,6 +46,10 @@ class CustomSearchView extends StatelessWidget {
 
   final TextStyle? textStyle;
 
+  final bool? obscureText;
+
+  final TextInputAction? textInputAction;
+
   final TextInputType? textInputType;
 
   final int? maxLines;
@@ -50,6 +57,10 @@ class CustomSearchView extends StatelessWidget {
   final String? hintText;
 
   final TextStyle? hintStyle;
+
+  final String? labelText;
+
+  final TextStyle? labelStyle;
 
   final Widget? prefix;
 
@@ -69,19 +80,17 @@ class CustomSearchView extends StatelessWidget {
 
   final FormFieldValidator<String>? validator;
 
-  final Function(String)? onChanged;
-
   @override
   Widget build(BuildContext context) {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: searchViewWidget(context),
+            child: floatingTextFieldWidget(context),
           )
-        : searchViewWidget(context);
+        : floatingTextFieldWidget(context);
   }
 
-  Widget searchViewWidget(BuildContext context) => SizedBox(
+  Widget floatingTextFieldWidget(BuildContext context) => SizedBox(
         width: width ?? double.maxFinite,
         child: TextFormField(
           scrollPadding:
@@ -89,58 +98,27 @@ class CustomSearchView extends StatelessWidget {
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
-          style:
-              textStyle ?? CustomTextStyles.bodyMediumGilroyRegularBluegray500,
+          style: textStyle ?? theme.textTheme.bodyMedium,
+          obscureText: obscureText!,
+          textInputAction: textInputAction,
           keyboardType: textInputType,
           maxLines: maxLines ?? 1,
           decoration: decoration,
           validator: validator,
-          onChanged: (String value) {
-            onChanged!.call(value);
-          },
         ),
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle:
-            hintStyle ?? CustomTextStyles.bodyMediumGilroyRegularBluegray500,
-        prefixIcon: prefix ??
-            Container(
-              margin: EdgeInsets.fromLTRB(12.h, 10.v, 8.h, 10.v),
-              child: CustomImageView(
-                imagePath: ImageConstant.imgSearch,
-                height: 16.adaptSize,
-                width: 16.adaptSize,
-              ),
-            ),
-        prefixIconConstraints: prefixConstraints ??
-            BoxConstraints(
-              maxHeight: 36.v,
-            ),
-        suffixIcon: suffix ??
-            Padding(
-              padding: EdgeInsets.only(
-                right: 15.h,
-              ),
-              child: IconButton(
-                onPressed: () => controller!.clear(),
-                icon: Icon(
-                  Icons.clear,
-                  color: Colors.grey.shade600,
-                ),
-              ),
-            ),
-        suffixIconConstraints: suffixConstraints ??
-            BoxConstraints(
-              maxHeight: 36.v,
-            ),
+        hintStyle: hintStyle ?? theme.textTheme.bodyMedium,
+        labelText: labelText ?? "",
+        labelStyle: labelStyle,
+        prefixIcon: prefix,
+        prefixIconConstraints: prefixConstraints,
+        suffixIcon: suffix,
+        suffixIconConstraints: suffixConstraints,
         isDense: true,
-        contentPadding: contentPadding ??
-            EdgeInsets.only(
-              top: 9.v,
-              right: 9.h,
-              bottom: 9.v,
-            ),
+        contentPadding:
+            contentPadding ?? EdgeInsets.fromLTRB(12.h, 24.v, 12.h, 14.v),
         fillColor: fillColor ?? appTheme.whiteA70001,
         filled: filled,
         border: borderDecoration ??
