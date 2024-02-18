@@ -1,0 +1,50 @@
+name: trenda
+description: A new Flutter project.
+version: 1.0.0+1
+environment: 
+  sdk: '>=2.12.0 <3.0.0'
+dependencies: 
+  flutter: 
+    sdk: flutter
+  flutter_localizations: 
+    sdk: flutter
+  provider: ^6.1.1
+  cached_network_image: ^3.3.0
+  flutter_svg: ^2.0.9
+  connectivity_plus: ^5.0.2
+  shared_preferences: ^2.2.2
+  flutter_login_facebook: ^1.6.2
+  pin_code_fields: ^8.0.1
+  country_pickers: ^2.0.0
+  sms_autofill: ^2.3.0
+  intl: ^0.18.0
+  dio: ^5.4.0
+dev_dependencies: 
+  flutter_test: 
+    sdk: flutter
+flutter: 
+  uses-material-design: true
+  assets: 
+    - assets/
+    - assets/images/
+  fonts: 
+    - family: Gilroy-Regular
+      fonts: 
+        - asset: assets/fonts/GilroyRegular.ttf
+          weight: 400
+    - family: Gilroy-Medium
+      fonts: 
+        - asset: assets/fonts/GilroyMedium.ttf
+          weight: 400
+    - family: Gilroy-Bold
+      fonts: 
+        - asset: assets/fonts/GilroyBold.ttf
+          weight: 400
+    - family: Gilroy-ExtraBold
+      fonts: 
+        - asset: assets/fonts/GilroyExtraBold.ttf
+          weight: 400
+    - family: Gilroy-SemiBold
+      fonts: 
+        - asset: assets/fonts/GilroySemiBold.ttf
+          weight: 400
